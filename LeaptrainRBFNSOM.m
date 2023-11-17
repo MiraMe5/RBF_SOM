@@ -71,16 +71,6 @@ end
 %     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for 0.5
 %     centersPerCategory=round(size(Xc,1)/120);%100
 %
-%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for 0.75
-%     %cent=round(size(Xc,1)/64);
-%     %centersPerCategory=round(size(Xc,1)-cent);
-
-
-
-%         init_Centroids = Xc(1:centersPerCategory, :);%%%%%%%%%%%%%%%%%%%%%%%% original
-
-%     % Run k-means clustering, with at most 100 iterations.
-%     [Centroids_c, memberships_c] = kMeans(Xc, init_Centroids, 1000);
 
 % ================================================
 %      Select RBF Centers and Parameters SOM
@@ -280,7 +270,7 @@ for (c = 1 : numCats)
     
     % Use the normal equations to solve for optimal theta.
     try
-        Theta(:, c) = pinv(X_activ' * X_activ) * X_activ' * y_c;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   y_c'
+        Theta(:, c) = pinv(X_activ' * X_activ) * X_activ' * y_c;
     catch
         Theta(:, c);
     end
