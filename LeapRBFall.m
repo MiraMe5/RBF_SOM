@@ -43,7 +43,7 @@ Centerss=zeros(numRBFNeurons,2048);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RBF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     [Centerss, betass, Theta,X_activ] = trainRBFN11(TT1, labels1', centersPerCategory,Centerss, betass,true);
+% [Centerss, betass, Theta,X_activ] = trainRBFN11(TT1, labels1', centersPerCategory,Centerss, betass,true);
 %     [Centerss, betass, Theta,X_activ] = trainRBFN(TT1, labels1', centersPerCategory,true);%3d
 
 %[Centerss, betass, Theta,X_activ] = LeaptrainRBFN(im, labels', centersPerCategory,true);
@@ -59,7 +59,7 @@ Centerss=zeros(numRBFNeurons,2048);
 %     %         %dzxx=reshape(dzxx,[size(dzxx,3) size(dzxx,4)]);%%%%%%%%%%%%%%%%%% softmax
 %     %         %dzxx=dzxx*X_activ;%%%%%%%%%%%%%%%%%% softmax
 %     %         %dzxx=dzxx';%%%%%%%%%%%%%%%%%% softmax
-%     [cost, dzxx] = costFunctionRBFN(Theta, X_activ, labels', lambda);
+     [cost, dzxx] = costFunctionRBFN(Theta, X_activ, labels', lambda);
 %     %         % [Theta, momentum] = accumulate_gradients(opts, learningRate, batchSize, Theta, momentum,dzdxx) ;
 %     %         %
 %     %         %
@@ -137,10 +137,10 @@ numRight = 0;
 wrong =0;ground=[];
 pred=[];
 
-% For each training sample...
+% For each testing sample...
 for (i = 1 : size(im, 1))%TT 3d
     % Compute the scores for both categories.
-    % = evaluateRBFN(Centerss, betass, Theta, TT(i, :));
+    
     scores = evaluateRBFN(Centerss, betass, Theta, im(i, :));
     [maxScore, category] = max(scores);
     pred(end+1)=category;
