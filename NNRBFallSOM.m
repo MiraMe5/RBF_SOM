@@ -132,7 +132,7 @@ numRight = 0;
 wrong =0;ground=[];
 pred=[];
 
-% For each training sample...
+% For each testing sample...
 for (i = 1 : size(im, 1))%TT 3d
     % Compute the scores for both categories.
     % = evaluateRBFN(Centerss, betass, Theta, TT(i, :));
